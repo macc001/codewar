@@ -79,10 +79,25 @@ console.log(cantidadMayores);
 //***************************************** */
 //* FILTRANDO UN ARRAY DE OBJETOS (MAP)
 //***************************************** */
+// Crea un nuevo arreglo a partir de una existente.
+// Nunca altera la cantidad de elementos del array original.
+// No altera el arreglo original (inmutabilidad del código).
 const data = users.map((item) => {
   return item.nombre;
 });
-console.log(data);
+
+const data2 = users.map((item) => {
+  item.newValue = Math.floor(Math.random() * (100 - 50) + 50);
+  return item;
+});
+
+const data3 = users.map((item) => {
+  return {
+    ...item,
+    newValue: Math.floor(Math.random() * (100 - 50) + 50),
+  };
+});
+console.log(data3);
 
 //***************************************** */
 //* FILTRANDO UN ARRAY DE OBJETOS (FILTER AVANZADO)
